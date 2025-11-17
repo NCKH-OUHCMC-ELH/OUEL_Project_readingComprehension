@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pratice.apps.PraticeConfig'
 ]
 
 MIDDLEWARE = [
@@ -74,11 +75,16 @@ WSGI_APPLICATION = 'readingapisOUEL.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'readingdb',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '' # mặc định localhost
     }
 }
 
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
